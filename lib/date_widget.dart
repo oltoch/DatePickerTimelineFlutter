@@ -3,7 +3,7 @@
 ///
 /// Author: Vivek Kaushik <me@vivekkasuhik.com>
 /// github: https://github.com/iamvivekkaushik/
-/// ***
+/// *** ***
 
 import 'package:date_picker_timeline/gestures/tap.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +47,10 @@ class DateWidget extends StatelessWidget {
                 child: Text(date.day.toString(), // Date
                     style: dateTextStyle),
               ),
-              Text(new DateFormat("E", locale).format(date).toUpperCase(), // WeekDay
+              Text(
+                  new DateFormat("E", locale)
+                      .format(date)
+                      .toUpperCase(), // WeekDay
                   style: dayTextStyle)
             ],
           ),
