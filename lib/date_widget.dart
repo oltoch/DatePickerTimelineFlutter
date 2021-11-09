@@ -30,37 +30,36 @@ class DateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Container(
-        width: width,
-        margin: EdgeInsets.all(3.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          color: selectionColor,
-        ),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 3),
+      child: InkWell(
         child: Padding(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(new DateFormat("MMM", locale).format(date).toUpperCase(), // Month
-                  style: monthTextStyle),
-              Text(date.day.toString(), // Date
-                  style: dateTextStyle),
+              // Text(new DateFormat("MMM", locale).format(date).toUpperCase(), // Month
+              //     style: monthTextStyle),
+              CircleAvatar(
+                maxRadius: 18,
+                backgroundColor: selectionColor,
+                child: Text(date.day.toString(), // Date
+                    style: dateTextStyle),
+              ),
               Text(new DateFormat("E", locale).format(date).toUpperCase(), // WeekDay
                   style: dayTextStyle)
             ],
           ),
         ),
+        onTap: () {
+          // Check if onDateSelected is not null
+          if (onDateSelected != null) {
+            // Call the onDateSelected Function
+            onDateSelected!(this.date);
+          }
+        },
       ),
-      onTap: () {
-        // Check if onDateSelected is not null
-        if (onDateSelected != null) {
-          // Call the onDateSelected Function
-          onDateSelected!(this.date);
-        }
-      },
     );
   }
 }
