@@ -3,7 +3,7 @@
 ///
 /// Author: Vivek Kaushik <me@vivekkasuhik.com>
 /// github: https://github.com/iamvivekkaushik/
-/// *** ***
+/// *** *** ***
 
 import 'package:date_picker_timeline/gestures/tap.dart';
 import 'package:flutter/material.dart';
